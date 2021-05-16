@@ -1,4 +1,3 @@
-export{};
 let character = 'LEE';
 let age = 30;
 let isIt = false;
@@ -38,3 +37,40 @@ op = {
   belt:'purple',
   age: 20
 };
+
+// explicit types
+let a1: string;
+let a2: number;
+let a3: boolean;
+
+// arrays
+let arr: string[];
+arr = ['t','2'];
+// arr.push(2);
+
+// union types
+let mixx: (string|number)[] =[];
+mixx.push(20);
+mixx.push('LEE');
+
+let mixxx: string|number|boolean;
+mixxx = 10;
+mixxx = 'LEE';
+
+//any
+let oo: any=25;
+oo = true;
+oo = 'LEE';
+
+let ppp: any[]=[];
+ppp.push(1);
+ppp.push('LEE');
+ppp.push(false);
+
+let ob: {name:any,age:any};
+ob = {name:1,age:'lee'}
+console.log(ob);
+
+
+
+

@@ -1,5 +1,4 @@
 "use strict";
-exports.__esModule = true;
 var character = 'LEE';
 var age = 30;
 var isIt = false;
@@ -30,3 +29,29 @@ op = {
     belt: 'purple',
     age: 20
 };
+// explicit types
+var a1;
+var a2;
+var a3;
+// arrays
+var arr;
+arr = ['t', '2'];
+// arr.push(2);
+// union types
+var mixx = [];
+mixx.push(20);
+mixx.push('LEE');
+var mixxx;
+mixxx = 10;
+mixxx = 'LEE';
+//any
+var oo = 25;
+oo = true;
+oo = 'LEE';
+var ppp = [];
+ppp.push(1);
+ppp.push('LEE');
+ppp.push(false);
+var ob;
+ob = { name: 1, age: 'lee' };
+console.log(ob);
