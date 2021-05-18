@@ -71,6 +71,42 @@ let ob: {name:any,age:any};
 ob = {name:1,age:'lee'}
 console.log(ob);
 
+// function
+let greet: Function;
+
+greet = () => {
+  console.log('hello, again');
+}
+
+const add = (a:number, b:number, c:number|string =10):void =>{//? optional, =10 default value  
+  console.log(a + b);
+  console.log(c);
+}
+add(5,2,30);
+
+const minus = (a:number,b:number):number => {  // return type but automatically 
+  return a + b;
+}
+let result = minus(10,5);
+
+// Type Aliases
+type StringOrNum = string | number;
+type objWithName = { name: string, uid: StringOrNum}
+
+const logDetail = (uid: StringOrNum, item: StringOrNum) => {
+  console.log(`${item} has a unit of ${uid}`);
+}
+
+const greett = (user: objWithName) =>{
+  console.log(`${user.name} say hello`);
+}
+
+//Function signatures
+let greet1: (a:string,b:string) => void;
+
+greet1 = (name: string, greeting: string) => {
+  console.log(`${name} says ${greeting}`);
+}
 
 
 

@@ -55,3 +55,29 @@ ppp.push(false);
 var ob;
 ob = { name: 1, age: 'lee' };
 console.log(ob);
+// function
+var greet;
+greet = function () {
+    console.log('hello, again');
+};
+var add = function (a, b, c) {
+    if (c === void 0) { c = 10; }
+    console.log(a + b);
+    console.log(c);
+};
+add(5, 2, 30);
+var minus = function (a, b) {
+    return a + b;
+};
+var result = minus(10, 5);
+var logDetail = function (uid, item) {
+    console.log(item + " has a unit of " + uid);
+};
+var greett = function (user) {
+    console.log(user.name + " say hello");
+};
+//Function signatures
+var greet1;
+greet1 = function (name, greeting) {
+    console.log(name + " says " + greeting);
+};
