@@ -20,11 +20,46 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 form.addEventListener('submit',(e:Event)=>{
   e.preventDefault();
 
+  let values: [string,string,number];
+  values = [toform.value,details.value,amount.valueAsNumber];
   let doc: Hasformatter;
   if(type.value === 'invoice'){
-    doc = new Invoice(toform.value,details.value,amount.valueAsNumber);
+    doc = new Invoice(...values);
   }else{
-    doc = new Payment(toform.value,details.value,amount.valueAsNumber);
+    doc = new Payment(...values);
   }
  list.render(doc,type.value,'end');
 });
+
+
+//Generic & Enum
+enum ResourceType { BOOK,BOX,AUTHOR,FILM,PERSON}
+
+interface Resource<T> {
+  uid:number;
+  resource:ResourceType;
+  data: T;
+}
+
+const docThree: Resource<object> = {
+  uid:1,
+  resource: ResourceType.AUTHOR,
+  data:{name:'OOGOG'}
+}
+const docFour: Resource<String[]> ={
+  uid:2,
+  resource:ResourceType.FILM,
+  data:['1','2','3','4']
+}
+
+// tuples 
+let arr = ['tpo',25,true];
+arr[0] = false;
+arr[1] = 'yohsi';
+
+let tuple:[string,number,boolean] = ['Lee',25,true];
+tuple[0] = 'KIM';
+tuple[1] = 10;
+
+let sutdd:[string,number];
+sutdd = ['POB',20];
